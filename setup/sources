@@ -1,0 +1,31 @@
+TARGETNAME=setup
+TARGETPATH=..
+TARGETTYPE=DYNLINK
+DLLENTRY=_DllMainCRTStartup
+USE_MSVCRT=1
+
+MSC_WARNING_LEVEL=/W4
+
+SOURCES= \
+        setup.cpp \
+        inffile.cpp \
+        params.cpp \
+        devutils.cpp \
+        portnum.cpp \
+        comdb.cpp \
+        msg.cpp \
+        utils.cpp \
+        setup.rc \
+
+TARGETLIBS= \
+        $(DDK_LIB_PATH)\kernel32.lib \
+        $(DDK_LIB_PATH)\advapi32.lib \
+        $(DDK_LIB_PATH)\setupapi.lib \
+        $(DDK_LIB_PATH)\newdev.lib \
+        $(DDK_LIB_PATH)\user32.lib \
+        $(DDK_LIB_PATH)\msports.lib \
+        $(DDK_LIB_PATH)\shlwapi.lib \
+
+PRECOMPILED_INCLUDE=precomp.h
+PRECOMPILED_PCH=precomp.pch
+PRECOMPILED_OBJ=precomp.obj
